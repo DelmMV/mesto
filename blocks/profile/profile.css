@@ -1,9 +1,10 @@
 .profile {
   max-width: 882px;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: flex-start;
-  padding: 0;
+  display: grid;
+  grid-template-columns: auto auto 400px;
+  justify-items: end;
   margin: 0 auto;
+  padding: 0;
+
 }
 
