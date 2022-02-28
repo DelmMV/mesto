@@ -1,0 +1,7 @@
+.cards__element {
+  position: relative;
+  display: grid;
+  grid-template-rows: 282px 80px;
+  box-sizing: border-box;
+  overflow: hidden;
+}

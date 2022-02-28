@@ -7,13 +7,18 @@
     <title>Mesto</title>
   </head>
   <body class="root">
+    <!-- Шапка -->
     <section class="header">
       <img class="header__logo-img" src="./image/logo.svg" alt="Логотип" />
       <img class="header__line" src="./image/line.svg" alt="Линия" />
     </section>
-
+    <!-- Профайл -->
     <section class="profile">
-      <img class="profile__avatar" src="./image/Jacque_Cousteau.jpg" alt="Фотография Жак-Ив Кусто" />
+      <img
+        class="profile__avatar"
+        src="./image/Jacque_Cousteau.jpg"
+        alt="Фотография Жак-Ив Кусто"
+      />
       <div class="profile__info">
         <h1 class="profile__title">Жак-Ив Кусто</h1>
         <button class="profile__edit-button"></button>
@@ -21,5 +26,53 @@
       </div>
       <button class="profile__add-button"></button>
     </section>
+    <!-- Галерея  -->
+    <section class="cards">
+      <ul class="cards__list">
+        <li class="cards__element">
+        <img class="cards__image" src="./image/Karachevsk.jpg" alt="Карачевск" />
+          <div class="cards__description">
+            <h2 class="cards__title">Карачаевск</h2>
+            <button class="cards__like-btn"></button>
+          </div>
+        </li>
+        <li class="cards__element">
+          <img class="cards__image" src="./image/Mount_Elbrus.png" alt="Гора Эльбрус" />
+          <div class="cards__description">
+            <h2 class="cards__title">Гора Эльбрус</h2>
+            <button class="cards__like-btn"></button>
+          </div>
+        </li>
+        <li class="cards__element">
+          <img class="cards__image" src="./image/Dombay.png" alt="Домбай" />
+          <div class="cards__description">
+            <h2 class="cards__title">Домбай</h2>
+            <button class="cards__like-btn"></button>
+          </div>
+        </li>
+        <li class="cards__element">
+          <img class="cards__image" src="./image/Mount_Elbrus_2.png" alt="Гора Эльбрус" />
+          <div class="cards__description">
+            <h2 class="cards__title">Гора Эльбрус</h2>
+            <button class="cards__like-btn"></button>
+          </div>
+        </li>
+        <li class="cards__element">
+          <img class="cards__image" src="./image/Dombay.png" alt="Домбай" />
+          <div class="cards__description">
+            <h2 class="cards__title">Домбай</h2>
+            <button class="cards__like-btn"></button>
+          </div>
+        </li>
+        <li class="cards__element">
+          <img class="cards__image" src="./image/Karachevsk.jpg" alt="Карачаево-Черкесия" />
+          <div class="cards__description">
+            <h2 class="cards__title">Карачаево-Черкесия</h2>
+            <button class="cards__like-btn"></button>
+          </div>
+        </li>
+      </ul>
+    </section>
+
   </body>
 </html>
