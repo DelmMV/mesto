@@ -1,16 +1,14 @@
 .popup__container {
-  position: relative;
-  left: 33.1%;
-  top: 27%;
-  width: 430px;
-  height: 330px;
-  border-radius: 10px;
-  background-color: white;
-  display: block;
-  padding: 0;
-  margin: 0;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
+  position: relative;
+  box-sizing: border-box;
+  border-radius: 10px;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
+  background-color: #fff;
+  max-width: 430px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 34px 36px 37px 36px;
+  top: 195px;
 }
