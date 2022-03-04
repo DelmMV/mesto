@@ -6,4 +6,13 @@
   background-repeat: no-repeat;
   border: none;
   cursor: pointer;
+  transition: all 0.5s ease;
 }
+
+.cards__like-btn:hover {
+  opacity: 0.5;
+}
+
+/* .cards__like-btn:active:enabled {
+  background-image: url(../../../image/like-btn-black.svg);
+} */

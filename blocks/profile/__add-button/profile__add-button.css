@@ -1,5 +1,4 @@
 .profile__add-button {
-  display: flex;
   width: 150px;
   height: 50px;
   background-image: url(../../../image/add-button.svg);
@@ -11,7 +10,7 @@
   border-radius: 2px;
   margin-top: 34px;
   cursor: pointer;
-  transition: all 0.4s ease;
+  transition: all 0.5s ease;
 }
 
 .profile__add-button:hover {

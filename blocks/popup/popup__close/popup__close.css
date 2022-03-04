@@ -8,4 +8,9 @@
   border-style: none;
   background-color: black;
   cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.popup__close:hover {
+  opacity: 0.5;
 }

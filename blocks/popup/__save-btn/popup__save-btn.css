@@ -10,4 +10,9 @@
   line-height: 22px;
   cursor: pointer;
   border-style: none;
+  transition: all 0.5s ease;
+}
+
+.popup__save-btn:hover {
+  opacity: 0.5;
 }
