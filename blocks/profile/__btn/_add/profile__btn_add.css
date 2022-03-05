@@ -14,5 +14,7 @@
   .profile__btn_add {
     width: 282px;
     height: 50px;
+    margin-top: 27px;
+    background-image: url(../../../../image/add_button_16.png);
   }
 }

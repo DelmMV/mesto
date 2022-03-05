@@ -8,8 +8,8 @@
 @media (max-width: 900px) {
   .header {
     padding-top: 28px;
-    padding-bottom: 30px;
     padding-left: 27px;
+    margin: 0;
   }
 }
 

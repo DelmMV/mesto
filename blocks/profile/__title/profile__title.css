@@ -15,16 +15,17 @@
   }
 }
 
-@media (max-width: 450px) {
+@media (max-width: 586px) {
   .profile__title {
     display: flex;
     font-style: normal;
     font-weight: 500;
     font-size: 27px;
     line-height: 33px;
-    padding-top: 26px;
+    padding-top: 22px;
     padding-left: 17px;
     justify-content: center;
+    text-align: center;
   }
 }
 

@@ -1,8 +1,14 @@
 .profile__info {
   display: inline-grid;
-  grid-template-columns: minmax(300px, 400px) 19px;
+  grid-template-columns: minmax(300px, 320px) 19px;
   grid-template-rows: auto;
   flex-grow: 1;
   padding: 0;
   margin: 0;
+}
+
+@media (max-width: 586px) {
+  .profile__info {
+    grid-template-columns: minmax(200px, 300px) 19px;
+  }
 }

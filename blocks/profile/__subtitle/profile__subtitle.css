@@ -12,12 +12,14 @@
     text-align: center;
   }
 }
-@media (max-width: 450px) {
+@media (max-width: 590px) {
   .profile__subtitle {
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
-    line-height: 17px;
+    line-height: 30px;
+    text-align: center;
+    padding-left: 18px;
     text-align: center;
   }
 }
