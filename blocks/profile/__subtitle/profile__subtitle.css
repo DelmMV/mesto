@@ -6,3 +6,18 @@
   color: #FFFFFF;
   margin-top: 0;
 }
+
+@media (min-width: 451px) and (max-width: 900px) {
+  .profile__subtitle {
+    text-align: center;
+  }
+}
+@media (max-width: 450px) {
+  .profile__subtitle {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+  }
+}

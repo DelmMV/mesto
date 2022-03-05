@@ -6,3 +6,16 @@
   margin: 0 auto;
   padding: 0;
 }
+
+@media (min-width: 586px) and (max-width: 900px) {
+  .cards__list {
+  grid-template-columns: repeat(2, 282px);}
+}
+
+@media (max-width: 585px) {
+  .cards__list {
+    grid-template-columns: 282px;
+  }
+  }
+
+

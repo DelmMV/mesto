@@ -1,12 +1,6 @@
 .cards__description {
-  /* background-color: #fff;
-  display: grid;
-  grid-template-columns: 3fr 1fr;
-  justify-items: end;
-  align-items: center; */
   padding: 0 15px 0 21px;
   border-radius: 0 0 10px 10px;
-
   background-color: #fff;
   display: flex;
   flex-direction: row;

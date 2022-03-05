@@ -8,3 +8,42 @@
   padding-top: 20px;
 }
 
+
+@media (min-width: 451px) and (max-width: 900px) {
+  .profile__title {
+    text-align: center;
+  }
+}
+
+@media (max-width: 450px) {
+  .profile__title {
+    display: flex;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 27px;
+    line-height: 33px;
+    padding-top: 26px;
+    padding-left: 17px;
+    justify-content: center;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

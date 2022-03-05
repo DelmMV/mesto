@@ -9,3 +9,10 @@
 .profile__btn_add:hover {
   opacity: 0.5;
 }
+
+@media (max-width: 900px) {
+  .profile__btn_add {
+    width: 282px;
+    height: 50px;
+  }
+}
