@@ -4,21 +4,25 @@
   font-size: 18px;
   line-height: 22px;
   color: #FFFFFF;
-  margin-top: 0;
+  margin: 0;
+  padding-bottom: 10px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
-@media (min-width: 451px) and (max-width: 900px) {
+@media (max-width: 900px) and (min-width: 587px) {
   .profile__subtitle {
     text-align: center;
+    padding-top: 10px;
   }
 }
-@media (max-width: 590px) {
+@media (max-width: 586px) {
   .profile__subtitle {
-    font-style: normal;
-    font-weight: normal;
     font-size: 14px;
     line-height: 30px;
     text-align: center;
     padding-left: 18px;
+    margin: 0;
   }
 }

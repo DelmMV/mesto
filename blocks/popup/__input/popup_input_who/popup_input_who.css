@@ -1,4 +1,4 @@
-.popup__input_who {
+.popup_input_who {
   width: 358px;
   padding-top: 24px;
   margin-bottom: 49px;
@@ -6,7 +6,7 @@
 }
 
 @media (max-width: 586px) {
-  .popup__input_who {
+  .popup_input_who {
     width: 238px;
   }
 }

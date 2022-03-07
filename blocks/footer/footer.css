@@ -4,14 +4,17 @@
   max-width: 880px;
 }
 
-@media (max-width: 586px){
+@media (max-width: 900px) and (min-width: 587px) {
   .footer {
-    padding-top: 30px;
+    max-width: 100%;
+    width: calc(100% - 38px);
+    /* margin: 0 19px 36px; */
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 586px){
   .footer {
+    padding-top: 30px;
     max-width: 100%;
     width: calc(100% - 38px);
     margin: 0 19px 36px;

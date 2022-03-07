@@ -9,9 +9,9 @@
   <body class="root">
 
     <!-- Шапка -->
-    <section class="header">
+    <header class="header">
       <img class="header__logo-img" src="./image/logo.svg" alt="Логотип" />
-    </section>
+    </header>
 
     <!-- Профайл -->
     <section class="profile">
@@ -22,35 +22,10 @@
       />
       <div class="profile__info">
         <h1 class="profile__title">Жак-Ив Кусто</h1>
-        <button class="profile__btn profile__btn_edit"></button>
+        <button class="profile__btn profile_btn_edit" type="button"></button>
         <h3 class="profile__subtitle">Исследователь океана</h3>
       </div>
-      <button class="profile__btn profile__btn_add"></button>
-    </section>
-
-    <!-- POPUP -->
-    <section class="popup">
-      <div class="popup__container">
-        <button class="popup__btn popup__btn_close"></button>
-        <h3 class="popup__title">Редактировать профиль</h3>
-        <form class="popup__form">
-          <input
-            class="popup__input popup__input_name"
-            id="name"
-            type="text"
-            placeholder="Имя"
-          />
-          <input
-            class="popup__input popup__input_who"
-            id="who"
-            type="text"
-            placeholder="О себе"
-          />
-          <button type="submit" class="popup__btn popup__btn_save">
-            Сохранить
-          </button>
-        </form>
-      </div>
+      <button class="profile__btn profile_btn_add" type="button"></button>
     </section>
 
     <!-- Галерея  -->
@@ -64,7 +39,7 @@
           />
           <div class="cards__description">
             <h2 class="cards__title">Карачаевск</h2>
-            <button class="cards__like-btn"></button>
+            <button class="cards__like-btn" type="button"></button>
           </div>
         </li>
         <li class="cards__element">
@@ -75,14 +50,14 @@
           />
           <div class="cards__description">
             <h2 class="cards__title">Гора Эльбрус</h2>
-            <button class="cards__like-btn"></button>
+            <button class="cards__like-btn" type="button"></button>
           </div>
         </li>
         <li class="cards__element">
           <img class="cards__image" src="./image/Dombay.png" alt="Домбай" />
           <div class="cards__description">
             <h2 class="cards__title">Домбай</h2>
-            <button class="cards__like-btn"></button>
+            <button class="cards__like-btn" type="button"></button>
           </div>
         </li>
         <li class="cards__element">
@@ -93,14 +68,14 @@
           />
           <div class="cards__description">
             <h2 class="cards__title">Гора Эльбрус</h2>
-            <button class="cards__like-btn"></button>
+            <button class="cards__like-btn" type="button"></button>
           </div>
         </li>
         <li class="cards__element">
           <img class="cards__image" src="./image/Dombay.png" alt="Домбай" />
           <div class="cards__description">
             <h2 class="cards__title">Домбай</h2>
-            <button class="cards__like-btn"></button>
+            <button class="cards__like-btn" type="button"></button>
           </div>
         </li>
         <li class="cards__element">
@@ -111,16 +86,44 @@
           />
           <div class="cards__description">
             <h2 class="cards__title">Карачаево-Черкесия</h2>
-            <button class="cards__like-btn"></button>
+            <button class="cards__like-btn" type="button"></button>
           </div>
         </li>
       </ul>
     </section>
 
     <!-- Подвал -->
-    <section class="footer">
+    <footer class="footer">
       <p class="footer__text">&#169; 2020 Mesto Russia</p>
+    </footer>
+
+     <!-- POPUP -->
+     <section class="popup">
+      <div class="popup__container">
+        <button class="popup__btn popup_btn_close" type="button"></button>
+        <h3 class="popup__title">Редактировать профиль</h3>
+        <form class="popup__form">
+          <input
+            class="popup__input popup_input_name"
+            id="name"
+            type="text"
+            placeholder="Имя"
+            name="name"
+          />
+          <input
+            class="popup__input popup_input_who"
+            id="who"
+            type="text"
+            placeholder="О себе"
+            name="description"
+          />
+          <button type="submit" class="popup__btn popup_btn_save">
+            Сохранить
+          </button>
+        </form>
+      </div>
     </section>
+
     <script src="./scripts/script.js"></script>
   </body>
 </html>

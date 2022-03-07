@@ -1,10 +1,10 @@
-.popup__input_name {
+.popup_input_name {
   width: 358px;
   line-height: 31px;
 }
 
 @media (max-width: 586px) {
-  .popup__input_name {
+  .popup_input_name {
     width: 238px;
   }
 }

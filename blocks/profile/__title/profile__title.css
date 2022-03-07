@@ -6,25 +6,25 @@
   color: #FFFFFF;
   margin: 0;
   padding-top: 20px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 
-@media (min-width: 451px) and (max-width: 900px) {
+@media (max-width: 900px) and (min-width: 587px) {
   .profile__title {
     text-align: center;
+    line-height: 30px;;
   }
 }
 
 @media (max-width: 586px) {
   .profile__title {
-    display: flex;
-    font-style: normal;
-    font-weight: 500;
     font-size: 27px;
     line-height: 33px;
     padding-top: 22px;
     padding-left: 17px;
-    justify-content: center;
     text-align: center;
   }
 }
