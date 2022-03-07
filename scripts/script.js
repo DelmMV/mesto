@@ -1,8 +1,8 @@
 // popup open/close
 let popup = document.querySelector('.popup');
-let popupCloseBtn = popup.querySelector ('.popup_btn_close');
+let popupCloseBtn = popup.querySelector ('.popup__btn-close');
 let profile = document.querySelector ('.profile');
-let profileEditBtn = profile.querySelector('.profile_btn_edit');
+let profileEditBtn = profile.querySelector('.profile__btn-edit');
 
 let profileTitle = profile.querySelector('.profile__title');
 let profileSubtitle = profile.querySelector('.profile__subtitle');
@@ -15,7 +15,7 @@ let PopupInputWho = popup.querySelector('#who');
 let cardsLikeBtn = document.querySelectorAll('.cards__like-btn');
 cardsLikeBtn.forEach(function(like) {
   like.addEventListener('click', function() {
-    like.classList.toggle('cards_like-btn_active')
+    like.classList.toggle('cards_like-btn_states_active')
   });
 });
 

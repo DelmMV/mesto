@@ -1,4 +1,6 @@
-.popup__input {
+.popup__input-name {
+  width: 358px;
+  line-height: 31px;
   border: none;
   outline: none;
   font-style: normal;
@@ -8,3 +10,8 @@
   border-bottom: 1px solid black;
 }
 
+@media (max-width: 586px) {
+  .popup__input-name {
+    width: 238px;
+  }
+}

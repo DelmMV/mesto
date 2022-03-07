@@ -1,0 +1,19 @@
+.popup__input-who {
+  border: none;
+  outline: none;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  color: #000000;
+  border-bottom: 1px solid black;
+  width: 358px;
+  padding-top: 24px;
+  margin-bottom: 49px;
+  line-height: 28px;
+}
+
+@media (max-width: 586px) {
+  .popup__input-who {
+    width: 238px;
+  }
+}
