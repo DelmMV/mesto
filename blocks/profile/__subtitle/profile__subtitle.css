@@ -12,8 +12,8 @@
 }
 
 @media (max-width: 900px) and (min-width: 587px) {
-  .profile__subtitle {
-    text-align: center;
+  .profile__subtitle {     
+    text-align: center; /* Здраствуйте Владимир! Если я уберу медиа запрос "text-align: center;" отсюда или ниже, тогда текст начинает сьезжать. =)*/
     padding-top: 10px;
   }
 }
@@ -25,3 +25,5 @@
     padding-left: 18px;
   }
 }
+
+
