@@ -3,14 +3,13 @@
   font-weight: 500;
   font-size: 42px;
   line-height: 48px;
-  color: #FFFFFF;
+  color: #ffffff;
   margin: 0;
   padding-top: 20px;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
 }
-
 
 @media (max-width: 900px) and (min-width: 587px) {
   .profile__title {

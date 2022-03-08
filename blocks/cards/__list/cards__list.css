@@ -12,7 +12,6 @@
     grid-template-columns: repeat(2, 282px);
     gap: 20px;
   }
-
 }
 
 @media (max-width: 585px) {
@@ -21,5 +20,3 @@
     gap: 20px;
   }
 }
-
-
