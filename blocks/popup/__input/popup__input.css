@@ -2,14 +2,14 @@
   width: 358px;
   line-height: 28px;
   border: none;
-  outline: none;
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
   color: #000000;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);;
   margin-bottom: 26px;
 }
+
 
 .popup__input:nth-child(2){
   margin-bottom: 0;
