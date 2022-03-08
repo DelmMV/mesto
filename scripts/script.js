@@ -11,13 +11,6 @@ let formElement = document.querySelector('.popup__form');
 let PopupInputName = popup.querySelector('#name');
 let PopupInputWho = popup.querySelector('#who');
 
-// Like active button
-let cardsLikeBtn = document.querySelectorAll('.cards__like-btn');
-cardsLikeBtn.forEach(function(like) {
-  like.addEventListener('click', function() {
-    like.classList.toggle('cards_like-btn_states_active')
-  });
-});
 
 // Close popup
 function closePopup() {
