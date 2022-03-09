@@ -7,7 +7,7 @@
   margin: 0;
 }
 
-@media (max-width: 586px) {
+@media screen and (max-width: 586px) {
   .profile__info {
     grid-template-columns: minmax(180px, 210px) 19px;
     grid-template-rows: 57px;
