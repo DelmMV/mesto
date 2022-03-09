@@ -7,7 +7,7 @@
   padding: 0;
 }
 
-@media (max-width: 900px) {
+@media screen and (max-width: 900px) {
   .profile {
     padding-top: 40px;
     justify-items: center;
