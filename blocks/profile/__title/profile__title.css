@@ -11,18 +11,17 @@
   overflow: hidden;
 }
 
-@media (max-width: 900px) and (min-width: 587px) {
+@media screen and (max-width: 900px) {
   .profile__title {
-    text-align: center; /* Здраствуйте Владимир! Если я уберу медиа запрос "text-align: center;" отсюда или ниже, тогда текст начинает сьезжать. =)*/
+    text-align: center;
     line-height: 30px;
   }
 }
 
-@media (max-width: 586px) {
+@media screen and (max-width: 586px) {
   .profile__title {
     font-size: 27px;
     line-height: 33px;
     padding-left: 17px;
-    text-align: center;
   }
 }

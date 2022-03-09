@@ -7,16 +7,15 @@
   padding: 0;
 }
 
-@media (min-width: 586px) and (max-width: 900px) {
+@media screen and (max-width: 900px) {
   .cards__list {
     grid-template-columns: repeat(2, 282px);
     gap: 20px;
   }
 }
 
-@media (max-width: 585px) {
+@media screen and (max-width: 585px) {
   .cards__list {
     grid-template-columns: 282px;
-    gap: 20px;
   }
 }
