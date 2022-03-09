@@ -12,7 +12,7 @@
   line-height: 28px;
 }
 
-@media (max-width: 586px) {
+@media screen and (max-width: 586px) {
   .popup__input-who {
     width: 238px;
   }
