@@ -29,64 +29,19 @@
       <!-- Галерея  -->
       <section class="cards">
         <ul class="cards__list">
-          <li class="cards__element">
-            <img
-              class="cards__image"
-              src="./image/Karachevsk.jpg"
-              alt="Карачевск"
-            />
-            <div class="cards__description">
-              <h2 class="cards__title">Карачаевск</h2>
-              <button class="cards__like-btn" type="button"></button>
-            </div>
-          </li>
-          <li class="cards__element">
-            <img
-              class="cards__image"
-              src="./image/Mount_Elbrus.png"
-              alt="Гора Эльбрус"
-            />
-            <div class="cards__description">
-              <h2 class="cards__title">Гора Эльбрус</h2>
-              <button class="cards__like-btn" type="button"></button>
-            </div>
-          </li>
-          <li class="cards__element">
-            <img class="cards__image" src="./image/Dombay.png" alt="Домбай" />
-            <div class="cards__description">
-              <h2 class="cards__title">Домбай</h2>
-              <button class="cards__like-btn" type="button"></button>
-            </div>
-          </li>
-          <li class="cards__element">
-            <img
-              class="cards__image"
-              src="./image/Mount_Elbrus_2.png"
-              alt="Гора Эльбрус"
-            />
-            <div class="cards__description">
-              <h2 class="cards__title">Гора Эльбрус</h2>
-              <button class="cards__like-btn" type="button"></button>
-            </div>
-          </li>
-          <li class="cards__element">
-            <img class="cards__image" src="./image/Dombay.png" alt="Домбай" />
-            <div class="cards__description">
-              <h2 class="cards__title">Домбай</h2>
-              <button class="cards__like-btn" type="button"></button>
-            </div>
-          </li>
-          <li class="cards__element">
-            <img
-              class="cards__image"
-              src="./image/Karachevsk.jpg"
-              alt="Карачаево-Черкесия"
-            />
-            <div class="cards__description">
-              <h2 class="cards__title">Карачаево-Черкесия</h2>
-              <button class="cards__like-btn" type="button"></button>
-            </div>
-          </li>
+          <template class="cards-template">
+            <li class="cards__element">
+              <img
+                class="cards__image"
+                src=""
+                alt="Карачаево-Черкесия"
+              />
+              <div class="cards__description">
+                <h2 class="cards__title">Карачаево-Черкесия</h2>
+                <button class="cards__like-btn" type="button"></button>
+              </div>
+            </li>
+          </template>
         </ul>
       </section>
     </main>
@@ -95,24 +50,24 @@
       <p class="footer__text">&#169; 2020 Mesto Russia</p>
     </footer>
     <!-- POPUP ADD-->
-    <section class="popup">
+    <section class="popup popup_type_add">
       <div class="popup__container">
-        <button class="popup__btn-close" type="button"></button>
-        <h3 class="popup__title">Редактировать профиль</h3>
-        <form class="popup__form" name="popup_form">
+        <button class="popup__btn-close popup_btn-close_add" type="button"></button>
+        <h3 class="popup__title">Новое место</h3>
+        <form class="popup__form popup_form_add" name="popup_form">
           <input
             class="popup__input"
-            id="name"
+            id="names"
             type="text"
-            placeholder="Имя"
-            name="name"
+            placeholder="Названия"
+            name="names"
           />
           <input
             class="popup__input"
-            id="who"
+            id="image-url"
             type="text"
-            placeholder="О себе"
-            name="description"
+            placeholder="Ссылка на картинку"
+            name="image-url"
           />
           <button type="submit" class="popup__btn-save">Сохранить</button>
         </form>
@@ -121,9 +76,9 @@
     <!-- POPUP EDIT -->
     <section class="popup popup_type_edit">
       <div class="popup__container">
-        <button class="popup__btn-close" type="button"></button>
+        <button class="popup__btn-close popup_btn-close_edit" type="button"></button>
         <h3 class="popup__title">Редактировать профиль</h3>
-        <form class="popup__form" name="popup_form">
+        <form class="popup__form popup_form_edit" name="popup_form">
           <input
             class="popup__input"
             id="name"

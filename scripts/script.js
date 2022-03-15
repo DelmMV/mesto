@@ -1,38 +1,98 @@
-let popup = document.querySelector(".popup");
-let popupCloseBtn = popup.querySelector(".popup__btn-close");
-let profile = document.querySelector(".profile");
-let profileEditBtn = profile.querySelector(".profile__btn-edit");
 
-let profileTitle = profile.querySelector(".profile__title");
-let profileSubtitle = profile.querySelector(".profile__subtitle");
+const initialCards = [
+  {
+    name: 'Архыз',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
+  },
+  {
+    name: 'Челябинская область',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
+  },
+  {
+    name: 'Иваново',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
+  },
+  {
+    name: 'Камчатка',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
+  },
+  {
+    name: 'Холмогорский район',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
+  },
+  {
+    name: 'Байкал',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
+  }
+];
 
-let formElement = document.querySelector(".popup__form");
-let PopupInputName = popup.querySelector("#name");
-let PopupInputWho = popup.querySelector("#who");
+//const popup = document.querySelector(".popup");
+const popupCloseBtnAdd = document.querySelector(".popup_btn-close_add");
+const popupCloseBtnEdit = document.querySelector(".popup_btn-close_edit");
+const profile = document.querySelector(".profile");
+const profileEditBtn = profile.querySelector(".profile__btn-edit");
+const profileAddBtn = profile.querySelector(".profile__btn-add");
+const profileTitle = profile.querySelector(".profile__title");
+const profileSubtitle = profile.querySelector(".profile__subtitle");
+const popupAdd = document.querySelector(".popup_type_add");
+const popupEdit = document.querySelector(".popup_type_edit");
+const popupTypeAdd = document.querySelector(".popup_type_add");
+const popupTypeEdit = document.querySelector(".popup_type_edit");
+const popupInputName = popupEdit.querySelector("#name");
+const popupInputWho = popupEdit.querySelector("#who");
+const popupInputNames = popupAdd.querySelector("#names")
+const popupInputImage = popupAdd.querySelector("#image-url")
+const formElementEdit = popupTypeEdit.querySelector(".popup_form_edit");
+const formElementAdd = popupTypeAdd.querySelector(".popup_form_add");
 
-// Close popup
-function closePopup() {
+//const popupEditForm = popupEdit.querySelector(".popup_form_edit")
+const cardsList = document.querySelector(".cards__list")
+
+
+//rendering cards
+function renderCards(cardsContent) {
+  const cards = document.querySelector(".cards-template").content.firstElementChild.cloneNode(true);
+  const cardsImage = cards.querySelector(".cards__image")
+
+  cards.querySelector(".cards__title").textContent = cardsContent.name;
+  cardsImage.src = cardsContent.link;
+  cardsImage.alt = cardsContent.name;
+  cardsList.append(cards)
+}
+
+function closePopup(popup) {
   popup.classList.remove("popup_opened");
 }
-popupCloseBtn.addEventListener("click", closePopup);
 
-// Edit popup
 function editPopup() {
-  popup.classList.add("popup_opened");
-
-  PopupInputName.value = profileTitle.textContent;
-  PopupInputWho.value = profileSubtitle.textContent;
+  popupEdit.classList.add("popup_opened");
+  popupInputName.value = profileTitle.textContent;
+  popupInputWho.value = profileSubtitle.textContent;
 }
-profileEditBtn.addEventListener("click", editPopup);
 
-// Save Popup Profile
-function formSubmitHandler(evt) {
+function addPopup() {
+  popupAdd.classList.add("popup_opened");
+}
+
+function formSubmitHandlerEdit(evt) {
   evt.preventDefault();
-
-  profileTitle.textContent = PopupInputName.value;
-  profileSubtitle.textContent = PopupInputWho.value;
-
-  closePopup();
+  profileTitle.textContent = popupInputName.value;
+  profileSubtitle.textContent = popupInputWho.value;
+  closePopup(popupTypeEdit);
 }
 
-formElement.addEventListener("submit", formSubmitHandler);
+function formSubmitHandlerAdd(evt) {
+  evt.preventDefault();
+  renderCards({name: popupInputNames.value, link: popupInputImage.value})
+  closePopup(popupTypeAdd);
+  popupInputNames.value = '';
+  popupInputImage.value = '';
+}
+
+initialCards.map(renderCards)
+profileEditBtn.addEventListener("click", editPopup);
+profileAddBtn.addEventListener("click", addPopup);
+formElementEdit.addEventListener("submit", formSubmitHandlerEdit);
+formElementAdd.addEventListener("submit", formSubmitHandlerAdd);
+popupCloseBtnEdit.addEventListener("click", () => closePopup(popupTypeEdit));
+popupCloseBtnAdd.addEventListener("click", () => closePopup(popupTypeAdd));
