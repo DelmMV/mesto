@@ -26,7 +26,6 @@ const initialCards = [
   }
 ];
 
-//const popup = document.querySelector(".popup");
 const popupCloseBtnAdd = document.querySelector(".popup_btn-close_add");
 const popupCloseBtnEdit = document.querySelector(".popup_btn-close_edit");
 const profile = document.querySelector(".profile");
@@ -44,8 +43,6 @@ const popupInputNames = popupAdd.querySelector("#names")
 const popupInputImage = popupAdd.querySelector("#image-url")
 const formElementEdit = popupTypeEdit.querySelector(".popup_form_edit");
 const formElementAdd = popupTypeAdd.querySelector(".popup_form_add");
-
-//const popupEditForm = popupEdit.querySelector(".popup_form_edit")
 const cardsList = document.querySelector(".cards__list")
 
 
@@ -57,8 +54,18 @@ function renderCards(cardsContent) {
   cards.querySelector(".cards__title").textContent = cardsContent.name;
   cardsImage.src = cardsContent.link;
   cardsImage.alt = cardsContent.name;
-  cardsList.append(cards)
+  setCardsActionListeners(cards);
+  cardsList.append(cards);
 }
+
+function removeCards(event) {
+  const card = event.currentTarget.closest(".cards__element");
+  card.remove();
+}
+function setCardsActionListeners(cards) {
+  cards.querySelector(".cards__delete-btn").addEventListener("click", removeCards);
+}
+
 
 function closePopup(popup) {
   popup.classList.remove("popup_opened");
@@ -83,7 +90,7 @@ function formSubmitHandlerEdit(evt) {
 
 function formSubmitHandlerAdd(evt) {
   evt.preventDefault();
-  renderCards({name: popupInputNames.value, link: popupInputImage.value})
+  renderCards({name: popupInputNames.value, link: popupInputImage.value});
   closePopup(popupTypeAdd);
   popupInputNames.value = '';
   popupInputImage.value = '';
