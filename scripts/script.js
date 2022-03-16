@@ -41,8 +41,8 @@ const popupInputName = popupTypeEdit.querySelector("#name");
 const popupInputWho = popupTypeEdit.querySelector("#who");
 const popupInputNames = popupTypeAdd.querySelector("#names");
 const popupInputImage = popupTypeAdd.querySelector("#image-url");
-const formElementEdit = popupTypeEdit.querySelector(".popup_form_edit");
-const formElementAdd = popupTypeAdd.querySelector(".popup_form_add");
+const formElementEdit = popupTypeEdit.querySelector(".popup__form_edit");
+const formElementAdd = popupTypeAdd.querySelector(".popup__form_add");
 const cardsList = document.querySelector(".cards__list");
 
 //rendering cards
