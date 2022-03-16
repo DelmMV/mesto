@@ -17,6 +17,7 @@
     padding-top: 10px;
   }
 }
+
 @media screen and (max-width: 586px) {
   .profile__subtitle {
     font-size: 14px;
