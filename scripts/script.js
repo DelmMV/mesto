@@ -24,14 +24,15 @@ const popupPreviewImage = popupTypePreview.querySelector(".popup__preview-image"
 const cardsLikeBtn = (event) => event.target.classList.toggle("cards__like-btn_active");
 
 function renderCards(cardsContent) {
-  const cards = cardTemplate.querySelector(".cards__element").cloneNode(true);
+  const renderCards = cardTemplate.querySelector(".cards__element").cloneNode(true);
 
-  cards.querySelector(".cards__title").textContent = cardsContent.name;
-  cards.querySelector(".cards__image").src = cardsContent.link;
-  cards.querySelector(".cards__image").alt = cardsContent.name;
-  setActionListeners(cards);
-  cardsList.prepend(cards);
+  renderCards.querySelector(".cards__title").textContent = cardsContent.name;
+  renderCards.querySelector(".cards__image").src = cardsContent.link;
+  renderCards.querySelector(".cards__image").alt = cardsContent.name;
+  setActionListeners(renderCards);
+  cardsList.prepend(renderCards);
 }
+
 function render() {
   initialCards.forEach(renderCards);
 }
@@ -69,6 +70,16 @@ function editPopup() {
   popupInputDescription.value = profileSubtitle.textContent;
 }
 
+function createCard(cardsContent) {
+  const createCard = cardTemplate.querySelector(".cards__element").cloneNode(true);
+
+  createCard.querySelector(".cards__title").textContent = cardsContent.name;
+  createCard.querySelector(".cards__image").src = cardsContent.link;
+  createCard.querySelector(".cards__image").alt = cardsContent.name;
+  setActionListeners(createCard)
+  cardsList.prepend(createCard);
+}
+
 function formSubmitHandlerEdit(evt) {
   evt.preventDefault();
   profileTitle.textContent = popupInputName.value;
@@ -78,7 +89,7 @@ function formSubmitHandlerEdit(evt) {
 
 function formSubmitHandlerAdd(evt) {
   evt.preventDefault();
-  renderCards({name: popupInputNames.value, link: popupInputImage.value});
+  createCard({name: popupInputNames.value, link: popupInputImage.value});
   closePopup(popupTypeAdd);
   popupInputNames.value = '';
   popupInputImage.value = '';
