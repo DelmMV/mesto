@@ -7,13 +7,13 @@ const profileEditBtn = profile.querySelector(".profile__btn-edit");
 const profileAddBtn = profile.querySelector(".profile__btn-add");
 const profileTitle = profile.querySelector(".profile__title");
 const profileSubtitle = profile.querySelector(".profile__subtitle");
-const popupTypeAdd = document.querySelector(".popup__state_type_add");
-const popupTypeEdit = document.querySelector(".popup__state_type_edit");
-const popupTypePreview = document.querySelector(".popup__state_type_preview")
-const popupInputName = popupTypeEdit.querySelector("#name");
-const popupInputWho = popupTypeEdit.querySelector("#who");
-const popupInputNames = popupTypeAdd.querySelector("#names");
-const popupInputImage = popupTypeAdd.querySelector("#image-url");
+const popupTypeAdd = document.querySelector(".popup_type_add");
+const popupTypeEdit = document.querySelector(".popup_type_edit");
+const popupTypePreview = document.querySelector(".popup_type_preview")
+const popupInputName = popupTypeEdit.querySelector(".popup__input_type_name");
+const popupInputDescription = popupTypeEdit.querySelector(".popup__input_type_description");
+const popupInputNames = popupTypeAdd.querySelector(".popup__input_type_names");
+const popupInputImage = popupTypeAdd.querySelector(".popup__input_type_image-url");
 const formElementEdit = popupTypeEdit.querySelector(".popup__form_type_edit");
 const formElementAdd = popupTypeAdd.querySelector(".popup__form_type_add");
 const cardsList = document.querySelector(".cards__list");
@@ -66,13 +66,13 @@ function openPopup(popup) {
 function editPopup() {
   openPopup(popupTypeEdit)
   popupInputName.value = profileTitle.textContent;
-  popupInputWho.value = profileSubtitle.textContent;
+  popupInputDescription.value = profileSubtitle.textContent;
 }
 
 function formSubmitHandlerEdit(evt) {
   evt.preventDefault();
   profileTitle.textContent = popupInputName.value;
-  profileSubtitle.textContent = popupInputWho.value;
+  profileSubtitle.textContent = popupInputDescription.value;
   closePopup(popupTypeEdit);
 }
 
