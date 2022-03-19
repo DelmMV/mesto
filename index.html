@@ -47,11 +47,11 @@
   <p class="footer__text">&#169; 2020 Mesto Russia</p>
 </footer>
 <!-- POPUP ADD-->
-<section class="popup popup_type_add">
+<section class="popup popup__state_type_add">
   <div class="popup__container">
-    <button class="popup__btn-close popup_btn-close_add" type="button"></button>
+    <button class="popup__btn-close popup__btn-close_type_add" type="button"></button>
     <h3 class="popup__title">Новое место</h3>
-    <form class="popup__form popup_form_add" name="popup_form">
+    <form class="popup__form popup__form_type_add" name="popup_form">
       <input class="popup__input" id="names" name="names" placeholder="Названия" type="text"/>
       <input class="popup__input" id="image-url" name="image-url" placeholder="Ссылка на картинку" type="text"/>
       <button class="popup__btn-save" type="submit">Создать</button>
@@ -59,11 +59,11 @@
   </div>
 </section>
 <!-- POPUP EDIT -->
-<section class="popup popup_type_edit">
+<section class="popup popup__state_type_edit">
   <div class="popup__container">
-    <button class="popup__btn-close popup_btn-close_edit" type="button"></button>
+    <button class="popup__btn-close popup__btn-close_type_edit" type="button"></button>
     <h3 class="popup__title">Редактировать профиль</h3>
-    <form class="popup__form popup_form_edit" name="popup_form">
+    <form class="popup__form popup__form_type_edit" name="popup_form">
       <input class="popup__input" id="name" name="name" placeholder="Имя" type="text"/>
       <input class="popup__input" id="who" name="description" placeholder="О себе" type="text"/>
       <button class="popup__btn-save" type="submit">Сохранить</button>
@@ -71,9 +71,9 @@
   </div>
 </section>
 <!-- POPUP PREVIEW-->
-<section class="popup popup_type_preview">
+<section class="popup popup__state_type_preview">
   <div class="popup__preview">
-    <button class="popup__btn-close popup_btn-close_preview" type="button"></button>
+    <button class="popup__btn-close popup__btn-close_type_preview" type="button"></button>
     <img alt="" class="popup__preview-image"
          src="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg">
     <p class="popup__preview-description">описания</p>
