@@ -26,23 +26,25 @@ const initialCards = [
   }
 ];
 
-const popupCloseBtnAdd = document.querySelector(".popup__btn-close_add");
-const popupCloseBtnEdit = document.querySelector(".popup__btn-close_edit");
-const popupCloseBtnPreview = document.querySelector(".popup__btn-close_preview");
+const popupCloseBtnAdd = document.querySelector(".popup_btn-close_add");
+const popupCloseBtnEdit = document.querySelector(".popup_btn-close_edit");
+const popupCloseBtnPreview = document.querySelector(".popup_btn-close_preview");
 const profile = document.querySelector(".profile");
 const profileEditBtn = profile.querySelector(".profile__btn-edit");
 const profileAddBtn = profile.querySelector(".profile__btn-add");
 const profileTitle = profile.querySelector(".profile__title");
 const profileSubtitle = profile.querySelector(".profile__subtitle");
+const popupAdd = document.querySelector(".popup_type_add");
+const popupEdit = document.querySelector(".popup_type_edit");
 const popupTypeAdd = document.querySelector(".popup_type_add");
 const popupTypeEdit = document.querySelector(".popup_type_edit");
 const popupTypePreview = document.querySelector(".popup_type_preview")
-const popupInputName = popupTypeEdit.querySelector("#name");
-const popupInputWho = popupTypeEdit.querySelector("#who");
-const popupInputNames = popupTypeAdd.querySelector("#names");
-const popupInputImage = popupTypeAdd.querySelector("#image-url");
-const formElementEdit = popupTypeEdit.querySelector(".popup__form_edit");
-const formElementAdd = popupTypeAdd.querySelector(".popup__form_add");
+const popupInputName = popupEdit.querySelector("#name");
+const popupInputWho = popupEdit.querySelector("#who");
+const popupInputNames = popupAdd.querySelector("#names");
+const popupInputImage = popupAdd.querySelector("#image-url");
+const formElementEdit = popupTypeEdit.querySelector(".popup_form_edit");
+const formElementAdd = popupTypeAdd.querySelector(".popup_form_add");
 const cardsList = document.querySelector(".cards__list");
 
 //rendering cards
@@ -80,11 +82,11 @@ function closePopup(popup) {
 }
 
 function addPopup() {
-  popupTypeAdd.classList.add("popup_opened");
+  popupAdd.classList.add("popup_opened");
 }
 
 function editPopup() {
-  popupTypeEdit.classList.add("popup_opened");
+  popupEdit.classList.add("popup_opened");
   popupInputName.value = profileTitle.textContent;
   popupInputWho.value = profileSubtitle.textContent;
 }
