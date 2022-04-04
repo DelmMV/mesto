@@ -1,4 +1,4 @@
-const popup = document.querySelectorAll('.popup')
+
 const popupCloseBtnAdd = document.querySelector(".popup__btn-close_type_add");
 const popupCloseBtnEdit = document.querySelector(".popup__btn-close_type_edit");
 const popupCloseBtnPreview = document.querySelector(".popup__btn-close_type_preview");
