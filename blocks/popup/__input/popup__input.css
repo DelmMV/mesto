@@ -8,6 +8,7 @@
   color: #000000;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   margin-bottom: 26px;
+  background-color: transparent;
 }
 
 .popup__input:nth-child(2) {

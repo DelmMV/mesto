@@ -1,0 +1,4 @@
+.popup__field {
+  display: flex;
+  position: relative;
+}

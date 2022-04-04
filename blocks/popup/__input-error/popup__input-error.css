@@ -4,6 +4,6 @@
   font-size: 12px;
   line-height: 15px;
   color: #FF0000;
-  position: relative;
-  bottom: 20px;
+  position: absolute;
+  top: 34px;
 }

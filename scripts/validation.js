@@ -1,46 +1,62 @@
-const formPopupElement = document.querySelector('.popup__form[name=popup_form_add]');
-const formPopupInput = formPopupElement.querySelector('.popup__input');
-const formPopupError = formPopupElement.querySelector(`.${formPopupInput.id}-error`);
-console.log(formPopupError)
+const formPopup = document.querySelector('.popup__form');
+const formPopupInput = formPopup.querySelector('.popup__input');
+const formPopupError = formPopup.querySelector(`.${formPopupInput.id}-error`);
 
-function enableValidation() {
-  formPopupElement.addEventListener('submit', handlerFormSubmit)
-  formPopupElement.addEventListener('input', handlerFormInput)
+const showInputError = (formPopupElement, inputElement,  errorMessage) => {
+  const errorElement = formPopupElement.querySelector(`.${inputElement.id}-error`);
+  inputElement.classList.add('popup__input_type_error')
+  errorElement.textContent = errorMessage;
 }
 
-function handlerFormSubmit(event) {
-  event.preventDefault();
-
-  const form = event.currentTarget;
-  const isValid =  form.checkValidity();
-  if (isValid) {
-    alert("Форма валидна")
-  }else{alert('Форма не валидна') }
-}
-function handlerFormInput(event) {
-  const form = event.currentTarget;
-  const input = event.target;
-  setCustomError(input)
-  setFieldError(input);
-
+const hideInputError = (formPopupElement, inputElement) => {
+  const errorElement = formPopupElement.querySelector(`.${inputElement.id}-error`);
+  inputElement.classList.remove('popup__input_type_error')
+  errorElement.textContent = '';
 }
 
-function  setCustomError(input) {
-  const validity = input.validity;
-
-  if(validity.tooShort || validity.tooLong) {
-    const currentLength = input.value.length;
-    const min = input.getAttribute('minlength');
-    const max = input.getAttribute('maxlength');
-    input.setCustomValidity(`Строка длинна ${currentLength} ${min} до ${max}`)
+const checkInputValidity = (formPopupElement, inputElement) => {
+  if(!inputElement.validity.valid) {
+    showInputError(formPopupElement, inputElement, inputElement.validationMessage)
+  } else {
+    hideInputError(formPopupElement, inputElement)
   }
-  if(input.typeMismatch) {
-    input.setCustomValidity("Это не ссылка")
-  }
+};
+
+const setEventListeners = (formPopupElement) => {
+  const inputList = Array.from(formPopupElement.querySelectorAll('.popup__input'))
+  const buttonElement = formPopupElement.querySelector('.popup__btn-save')
+  toggleButtonState(inputList, buttonElement)
+
+  inputList.forEach((inputElement) => {
+    inputElement.addEventListener('input', function () {
+      checkInputValidity(formPopupElement, inputElement)
+      toggleButtonState(inputList, buttonElement)
+    })
+  });
 }
 
-function setFieldError(input){
-  const span1 = document.querySelector(`.${input.id}-error`);
-  span1.textContent = input.validationMessage;
+const hasInvalidInputs = (inputList) => {
+  return inputList.some((inputElement) => {
+    return !inputElement.validity.valid;
+  });
+};
+
+const toggleButtonState =  (inputList, buttonElement) => {
+  if(hasInvalidInputs(inputList)) {
+    buttonElement.classList.add('popup__btn-save_type_inactive');
+  } else {
+    buttonElement.classList.remove('popup__btn-save_type_inactive');
+  }
+};
+
+const enableValidation = () => {
+  const formList = Array.from(document.querySelectorAll('.popup__form'))
+  formList.forEach((formPopupElement) => {
+    formPopupElement.addEventListener('submit', function (evt) {
+      evt.preventDefault();
+    });
+    setEventListeners(formPopupElement)
+  });
 }
-enableValidation();
+
+enableValidation(formPopup, formPopupInput, formPopupError);
