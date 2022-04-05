@@ -28,18 +28,17 @@
   </section>
   <!-- Галерея  -->
   <section class="cards">
-    <ul class="cards__list">
-      <template class="cards-template">
-        <li class="cards__element">
+      <template class="cards-template cards__list">
+        <div class="cards__element">
           <img alt="кнопка закрыть" class="cards__delete-btn" src="./image/trash.svg">
-          <img alt="описания" class="cards__image" src=https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg"/>
+          <img alt="описания" class="cards__image"
+               src=https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg"/>
           <div class="cards__description">
             <h2 class="cards__title">Карачаево-Черкесия</h2>
             <button class="cards__like-btn" type="button"></button>
           </div>
-        </li>
+        </div>
       </template>
-    </ul>
   </section>
 </main>
 <!-- Подвал -->
@@ -53,12 +52,14 @@
     <h3 class="popup__title">Новое место</h3>
     <form class="popup__form popup__form_type_add" name="popup_form_add" novalidate>
       <label class="popup__field">
-      <input class="popup__input popup__input_type_names" id="names-input" name="names-input" placeholder="Названия" type="text" minlength="2" maxlength="30" required/>
-      <span class="names-input-error popup__input-error"></span>
+        <input class="popup__input popup__input_type_names" id="names-input" maxlength="30" minlength="2"
+               name="names-input" placeholder="Названия" required type="text"/>
+        <span class="names-input-error popup__input-error"></span>
       </label>
       <label class="popup__field">
-      <input class="popup__input popup__input_type_image-url" id="image-url" name="image-url" placeholder="Ссылка на картинку" type="url" required/>
-      <span class="image-url-error popup__input-error"></span>
+        <input class="popup__input popup__input_type_image-url" id="image-url" name="image-url"
+               placeholder="Ссылка на картинку" required type="url"/>
+        <span class="image-url-error popup__input-error"></span>
       </label>
       <button class="popup__btn-save" type="submit">Создать</button>
     </form>
@@ -71,14 +72,16 @@
     <h3 class="popup__title">Редактировать профиль</h3>
     <form class="popup__form popup__form_type_edit" name="popup_form_edit" novalidate>
       <label class="popup__field">
-      <input class="popup__input popup__input_type_name" id="name-input" name="name" placeholder="Имя" type="text" minlength="2" maxlength="40" required/>
-      <span class="name-input-error popup__input-error"></span>
+        <input class="popup__input popup__input_type_name" id="name-input" maxlength="40" minlength="2" name="name"
+               placeholder="Имя" required type="text"/>
+        <span class="name-input-error popup__input-error"></span>
       </label>
       <label class="popup__field">
-      <input class="popup__input popup__input_type_description" id="who-input" name="description" placeholder="О себе" type="text" minlength="2" maxlength="200" required/>
-      <span class="who-input-error popup__input-error"></span>
+        <input class="popup__input popup__input_type_description" id="who-input" maxlength="200" minlength="2"
+               name="description" placeholder="О себе" required type="text"/>
+        <span class="who-input-error popup__input-error"></span>
       </label>
-      <button class="popup__btn-save" type="submit">Сохранить</button>
+      <button class="popup__btn-save popup__btn-save_type_edit" type="submit">Сохранить </button>
     </form>
   </div>
 </section>
@@ -92,7 +95,7 @@
   </div>
 </section>
 <script src="./scripts/cards.js"></script>
-<script src="./scripts/script.js"></script>
 <script src="./scripts/validation.js"></script>
+<script src="./scripts/script.js"></script>
 </body>
 </html>
