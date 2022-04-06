@@ -28,17 +28,7 @@
   </section>
   <!-- Галерея  -->
   <section class="cards">
-      <template class="cards-template cards__list">
-        <div class="cards__element">
-          <img alt="кнопка закрыть" class="cards__delete-btn" src="./image/trash.svg">
-          <img alt="описания" class="cards__image"
-               src=https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg"/>
-          <div class="cards__description">
-            <h2 class="cards__title">Карачаево-Черкесия</h2>
-            <button class="cards__like-btn" type="button"></button>
-          </div>
-        </div>
-      </template>
+    <ul class="cards__list"></ul>
   </section>
 </main>
 <!-- Подвал -->
@@ -61,7 +51,7 @@
                placeholder="Ссылка на картинку" required type="url"/>
         <span class="image-url-error popup__input-error"></span>
       </label>
-      <button class="popup__btn-save" type="submit">Создать</button>
+      <button class="popup__btn-save popup__btn-save_type_add" type="submit">Создать</button>
     </form>
   </div>
 </section>
@@ -94,6 +84,17 @@
     <p class="popup__preview-description">описания</p>
   </div>
 </section>
+<template class="cards-template">
+  <li class="card">
+    <img alt="кнопка закрыть" class="card__delete-btn" src="./image/trash.svg">
+    <img alt="описания" class="card__image"
+         src=https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg"/>
+    <div class="card__description">
+      <h2 class="card__title">Карачаево-Черкесия</h2>
+      <button class="card__like-btn" type="button"></button>
+    </div>
+  </li>
+</template>
 <script src="./scripts/cards.js"></script>
 <script src="./scripts/validation.js"></script>
 <script src="./scripts/script.js"></script>

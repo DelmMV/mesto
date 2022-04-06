@@ -1,4 +1,4 @@
-.cards__element {
+.card {
   position: relative;
   display: grid;
   grid-template-rows: 282px 80px;

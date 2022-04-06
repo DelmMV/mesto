@@ -16,13 +16,14 @@
 /* cards */
 @import url(../blocks/cards/cards.css);
 @import url(../blocks/cards/__list/cards__list.css);
-@import url(../blocks/cards/__image/cards__image.css);
-@import url(../blocks/cards/__title/cards__title.css);
-@import url(../blocks/cards/__element/cards__element.css);
-@import url(../blocks/cards/__description/cards__description.css);
-@import url(../blocks/cards/__like-btn/cards__like-btn.css);
-@import url(../blocks/cards/__like-btn/_active/cards__like-btn_active.css);
-@import url(../blocks/cards/__delete-btn/cards__delete-btn.css);
+/*card template*/
+@import url(../blocks/card/__image/card__image.css);
+@import url(../blocks/card/__title/card__title.css);
+@import url(../blocks/card/card.css);
+@import url(../blocks/card/__description/card__description.css);
+@import url(../blocks/card/__like-btn/card__like-btn.css);
+@import url(../blocks/card/__like-btn/_active/card__like-btn_active.css);
+@import url(../blocks/card/__delete-btn/card__delete-btn.css);
 /* footer */
 @import url(../blocks/footer/footer.css);
 @import url(../blocks/footer/__text/footer__text.css);
