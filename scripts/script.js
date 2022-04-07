@@ -27,7 +27,6 @@ const popupPreviewImage = popupTypePreview.querySelector(".popup__preview-image"
 const popupBtnEdit = document.querySelector('.popup__btn-save_type_edit');
 const popupBtnAdd = document.querySelector('.popup__btn-save_type_add');
 
-
 const handleLikeButton = (event) => event.target.classList.toggle("card__like-btn_active");
 
 function renderCards(cardsContent) {
@@ -71,7 +70,6 @@ function resetPopupAddForm() {
   namesAddInputError.textContent = '';
   imageAddInputError.textContent = '';
   formElementAdd.reset();
-
 }
 
 function resetPopupEditForm() {

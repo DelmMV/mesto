@@ -1,5 +1,4 @@
-
-const showInputError = (formPopupElement, inputElement,  errorMessage, {...rest}) => {
+const showInputError = (formPopupElement, inputElement, errorMessage, {...rest}) => {
   const errorElement = formPopupElement.querySelector(`.${inputElement.id}-error`);
   inputElement.classList.add(rest.inputErrorClass)
   errorElement.textContent = errorMessage;
@@ -12,7 +11,7 @@ const hideInputError = (formPopupElement, inputElement, {...rest}) => {
 }
 
 const checkInputValidity = (formPopupElement, inputElement, {...rest}) => {
-  if(!inputElement.validity.valid) {
+  if (!inputElement.validity.valid) {
     showInputError(formPopupElement, inputElement, inputElement.validationMessage, rest)
   } else {
     hideInputError(formPopupElement, inputElement, rest)
@@ -38,8 +37,8 @@ const hasInvalidInputs = (inputList) => {
   });
 };
 
-const toggleButtonState =  (inputList, buttonElement, inactiveButtonClass) => {
-  if(hasInvalidInputs(inputList)) {
+const toggleButtonState = (inputList, buttonElement, inactiveButtonClass) => {
+  if (hasInvalidInputs(inputList)) {
     buttonElement.setAttribute("disabled", "true");
     buttonElement.classList.add(inactiveButtonClass);
   } else {
