@@ -139,8 +139,8 @@ function handleMouseClick() {
 initialCards.forEach(createCard);
 
 profileEditBtn.addEventListener("click", () => {
-  editPopup();
   resetPopupEditForm();
+  editPopup();
 });
 profileAddBtn.addEventListener("click", () => {
   resetPopupAddForm();
