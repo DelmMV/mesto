@@ -1,6 +1,6 @@
 import {Card} from "./Card.js";
-import {FormValidator} from "./FormValidator.js";
 import {initialCards} from "./initialCards.js";
+import {FormValidator} from "./FormValidator.js";
 
 const popupCloseBtnAdd = document.querySelector(".popup__btn-close_type_add");
 const popupCloseBtnEdit = document.querySelector(".popup__btn-close_type_edit");
