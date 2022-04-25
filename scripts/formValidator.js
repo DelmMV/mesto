@@ -1,3 +1,4 @@
+
 export class FormValidator {
   constructor(list, formSelector) {
     this._formSelector = formSelector;
