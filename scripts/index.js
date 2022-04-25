@@ -18,15 +18,9 @@ const popupInputNames = popupTypeAdd.querySelector(".popup__input_type_names");
 const popupInputImage = popupTypeAdd.querySelector(".popup__input_type_image-url");
 const formElementEdit = popupTypeEdit.querySelector(".popup__form_type_edit");
 const formElementAdd = popupTypeAdd.querySelector(".popup__form_type_add");
-const namesAddInputError = popupTypeAdd.querySelector('.names-input-error');
-const imageAddInputError = popupTypeAdd.querySelector('.image-url-error');
-const nameEditInputError = popupTypeEdit.querySelector('.name-input-error');
-const whoEditInputError = popupTypeEdit.querySelector('.who-input-error');
 const cardsList = document.querySelector(".cards__list");
 export const popupPreviewDescription = popupTypePreview.querySelector(".popup__preview-description");
 export const popupPreviewImage = popupTypePreview.querySelector(".popup__preview-image");
-const popupBtnEdit = document.querySelector('.popup__btn-save_type_edit');
-const popupBtnAdd = document.querySelector('.popup__btn-save_type_add');
 
 const validationArray = {
   formSelector: '.popup__form',
@@ -36,12 +30,11 @@ const validationArray = {
   inputErrorClass: 'popup__input_type_error',
 };
 
-const formList = Array.from(document.querySelectorAll(validationArray.formSelector))
+const validationAddCard = new FormValidator(validationArray, formElementAdd)
+const validationEditCard = new FormValidator(validationArray, formElementEdit)
 
-formList.forEach((formElement) => {
-  const formValid = new FormValidator(validationArray, formElement);
-  formValid.enableValidation()
-});
+validationAddCard.enableValidation()
+validationEditCard.enableValidation()
 
 function renderCard(cardContent, template) {
   const card = new Card(cardContent, template);
@@ -65,11 +58,17 @@ function closePopup(popup) {
   document.removeEventListener('click', handleMouseClick);
 }
 
-function editPopup() {
-  enabledPopupBtn();
+function openPopupEdit() {
+  validationEditCard.resetErrors();
   popupInputName.value = profileTitle.textContent;
   popupInputDescription.value = profileSubtitle.textContent;
+  validationEditCard.toggleButtonStateOff();
   openPopup(popupTypeEdit);
+}
+
+function openPopupAdd() {
+  validationAddCard.resetErrors()
+  openPopup(popupTypeAdd);
 }
 
 function handleFormSubmitEdit(evt) {
@@ -87,8 +86,8 @@ function handleFormSubmitAdd(evt) {
 }
 
 function handleKeyEsc(evt) {
-  const popup = document.querySelector('.popup_opened')
   if(evt.key === 'Escape') {
+    const popup = document.querySelector('.popup_opened')
     closePopup(popup)
   }
 }
@@ -102,36 +101,12 @@ function handleMouseClick() {
   })
 }
 
-function enabledPopupBtn() {
-  popupBtnEdit.disabled = false;
-  popupBtnEdit.classList.remove('popup__btn-save_type_inactive');
-}
-
-function resetPopupAddForm() {
-  popupBtnAdd.classList.add('popup__btn-save_type_inactive');
-  popupBtnAdd.disabled = true;
-  popupInputNames.classList.remove('popup__input_type_error')
-  popupInputImage.classList.remove('popup__input_type_error')
-  namesAddInputError.textContent = '';
-  imageAddInputError.textContent = '';
-  formElementAdd.reset();
-}
-
-function resetPopupEditForm() {
-  popupInputName.classList.remove('popup__input_type_error')
-  popupInputDescription.classList.remove('popup__input_type_error')
-  nameEditInputError.textContent = '';
-  whoEditInputError.textContent = '';
-}
-
 profileEditBtn.addEventListener("click", () => {
-  resetPopupEditForm();
-  editPopup();
+  openPopupEdit();
 });
 
 profileAddBtn.addEventListener("click", () => {
-  resetPopupAddForm();
-  openPopup(popupTypeAdd);
+  openPopupAdd()
 });
 
 formElementEdit.addEventListener("submit", handleFormSubmitEdit);
