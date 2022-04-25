@@ -78,7 +78,7 @@ function handleFormSubmitEdit(evt) {
 
 function handleFormSubmitAdd(evt) {
   evt.preventDefault();
-  renderCard({name: popupInputNames.value, link: popupInputImage.value}, '.cards-template');
+  renderCard({name: popupInputNames.value, link: popupInputImage.value});
   closePopup(popupTypeAdd);
   formElementAdd.reset();
 }
