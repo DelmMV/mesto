@@ -7,9 +7,9 @@ export class Card {
     this._cardSelector = cardSelector
   }
 
-  _getTemplate() {
+  static _getTemplate() {
     const cardElement = document
-      .querySelector(this._cardSelector)
+      .querySelector(".cards-template")
       .content
       .querySelector('.card')
       .cloneNode(true);
@@ -18,7 +18,7 @@ export class Card {
   }
 
   createCard() {
-    this._card = this._getTemplate();
+    this._card = Card._getTemplate();
     this._card.querySelector('.card__image').src = this._link;
     this._card.querySelector('.card__image').alt = this._name;
     this._card.querySelector(".card__title").textContent = this._name;

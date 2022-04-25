@@ -36,15 +36,13 @@ const validationEditCard = new FormValidator(validationArray, formElementEdit)
 validationAddCard.enableValidation()
 validationEditCard.enableValidation()
 
-function renderCard(cardContent, template) {
-  const card = new Card(cardContent, template);
+function renderCard(template) {
+  const card = new Card(template);
   const element = card.createCard();
   cardsList.prepend(element);
 }
 
-initialCards.forEach(function (card) {
-  renderCard(card, '.cards-template')
-})
+initialCards.forEach(renderCard);
 
 export function openPopup(popup) {
   document.addEventListener('click', handleMouseClick);
