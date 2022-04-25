@@ -10,5 +10,5 @@ https://delmmv.github.io/mesto/
 * Figma
 * Media queries
 * Nested БЭМ
-* OOP concept
+* OOP
 * Git
