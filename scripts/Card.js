@@ -27,7 +27,8 @@ export class Card {
   }
 
   _removeCards() {
-    this._card.closest('.card').remove();
+    this._card.remove();
+    this._card = null;
   }
 
   _handleLikeButton () {
@@ -35,9 +36,9 @@ export class Card {
   }
 
   _openPreview() {
-    popupPreviewDescription.textContent = this._card.querySelector(".card__title").textContent;
-    popupPreviewImage.src = this._card.querySelector(".card__image").src;
-    popupPreviewImage.alt = this._card.querySelector(".card__title").textContent;
+    popupPreviewDescription.textContent = this._name;
+    popupPreviewImage.src = this._link;
+    popupPreviewImage.alt = this._name;
     openPopup(popupTypePreview)
   }
 
