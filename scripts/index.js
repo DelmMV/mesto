@@ -36,13 +36,19 @@ const validationEditCard = new FormValidator(validationArray, formElementEdit)
 validationAddCard.enableValidation();
 validationEditCard.enableValidation();
 
-function renderCard(template) {
-  const card = new Card(template);
-  const element = card.createCard();
-  cardsList.prepend(element);
+function renderCard(cardContent, template) {
+  return new Card(cardContent, template);
 }
 
-initialCards.forEach(renderCard);
+initialCards.forEach((item) => {
+  insertCard(item);
+})
+
+function insertCard(item) {
+  const card = renderCard(item, '.cards-template');
+  cardsList.prepend(card.createCard())
+}
+
 
 export function openPopup(popup) {
   document.addEventListener('click', handleMouseClick);
@@ -78,7 +84,7 @@ function handleFormSubmitEdit(evt) {
 
 function handleFormSubmitAdd(evt) {
   evt.preventDefault();
-  renderCard({name: popupInputNames.value, link: popupInputImage.value});
+  insertCard({name: popupInputNames.value, link: popupInputImage.value})
   closePopup(popupTypeAdd);
   formElementAdd.reset();
 }

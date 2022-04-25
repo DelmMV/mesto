@@ -7,16 +7,16 @@ export class Card {
     this._cardSelector = cardSelector
   }
 
-  static _getTemplate() {
+  _getTemplate() {
     return document
-      .querySelector(".cards-template")
+      .querySelector(this._cardSelector)
       .content
       .querySelector('.card')
       .cloneNode(true);
   }
 
   createCard() {
-    this._card = Card._getTemplate();
+    this._card = this._getTemplate();
     this._card.querySelector('.card__image').src = this._link;
     this._card.querySelector('.card__image').alt = this._name;
     this._card.querySelector(".card__title").textContent = this._name;
