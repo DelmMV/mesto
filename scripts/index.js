@@ -33,8 +33,8 @@ const validationArray = {
 const validationAddCard = new FormValidator(validationArray, formElementAdd)
 const validationEditCard = new FormValidator(validationArray, formElementEdit)
 
-validationAddCard.enableValidation()
-validationEditCard.enableValidation()
+validationAddCard.enableValidation();
+validationEditCard.enableValidation();
 
 function renderCard(template) {
   const card = new Card(template);
@@ -65,7 +65,7 @@ function openPopupEdit() {
 }
 
 function openPopupAdd() {
-  validationAddCard.resetErrors()
+  validationAddCard.resetErrors();
   openPopup(popupTypeAdd);
 }
 
@@ -84,17 +84,17 @@ function handleFormSubmitAdd(evt) {
 }
 
 function handleKeyEsc(evt) {
-  if(evt.key === 'Escape') {
-    const popup = document.querySelector('.popup_opened')
-    closePopup(popup)
+  if (evt.key === 'Escape') {
+    const popup = document.querySelector('.popup_opened');
+    closePopup(popup);
   }
 }
 
 function handleMouseClick() {
-  const popup = document.querySelector('.popup_opened')
+  const popup = document.querySelector('.popup_opened');
   popup.addEventListener('click', (evt) => {
     if (evt.target.classList.contains('popup_opened') || evt.target.classList.contains('popup__btn-close')) {
-      closePopup(popup)
+      closePopup(popup);
     }
   })
 }
@@ -104,7 +104,7 @@ profileEditBtn.addEventListener("click", () => {
 });
 
 profileAddBtn.addEventListener("click", () => {
-  openPopupAdd()
+  openPopupAdd();
 });
 
 formElementEdit.addEventListener("submit", handleFormSubmitEdit);

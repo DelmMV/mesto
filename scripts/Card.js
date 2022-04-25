@@ -1,4 +1,4 @@
-import {popupPreviewImage, popupPreviewDescription, openPopup, popupTypePreview} from './index.js'
+import {openPopup, popupPreviewDescription, popupPreviewImage, popupTypePreview} from './index.js'
 
 export class Card {
   constructor(data, cardSelector) {
@@ -8,13 +8,11 @@ export class Card {
   }
 
   static _getTemplate() {
-    const cardElement = document
+    return document
       .querySelector(".cards-template")
       .content
       .querySelector('.card')
       .cloneNode(true);
-
-    return cardElement;
   }
 
   createCard() {
@@ -23,7 +21,7 @@ export class Card {
     this._card.querySelector('.card__image').alt = this._name;
     this._card.querySelector(".card__title").textContent = this._name;
     this._setActionListeners();
-    return this._card
+    return this._card;
   }
 
   _removeCards() {
@@ -31,7 +29,7 @@ export class Card {
     this._card = null;
   }
 
-  _handleLikeButton () {
+  _handleLikeButton() {
     this._card.querySelector('.card__like-btn').classList.toggle("card__like-btn_active");
   }
 
@@ -39,11 +37,11 @@ export class Card {
     popupPreviewDescription.textContent = this._name;
     popupPreviewImage.src = this._link;
     popupPreviewImage.alt = this._name;
-    openPopup(popupTypePreview)
+    openPopup(popupTypePreview);
   }
 
   _setActionListeners() {
-    this._card.querySelector(".card__delete-btn").addEventListener("click", ()=> {
+    this._card.querySelector(".card__delete-btn").addEventListener("click", () => {
       this._removeCards();
     });
     this._card.querySelector(".card__like-btn").addEventListener("click", () => {

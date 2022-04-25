@@ -1,4 +1,3 @@
-
 export class FormValidator {
   constructor(list, formSelector) {
     this._formSelector = formSelector;
@@ -9,6 +8,7 @@ export class FormValidator {
     this._inputList = Array.from(this._formSelector.querySelectorAll(this._inputSelector));
     this._buttonElement = this._formSelector.querySelector(this._submitButtonSelector);
   }
+
   _showInputError = (inputElement, errorMessage) => {
     this._errorElement = this._formSelector.querySelector(`.${inputElement.id}-error`);
     inputElement.classList.add(this._inputErrorClass)
@@ -23,9 +23,9 @@ export class FormValidator {
 
   _checkInputValidity = (inputElement) => {
     if (!inputElement.validity.valid) {
-      this._showInputError(inputElement, inputElement.validationMessage)
+      this._showInputError(inputElement, inputElement.validationMessage);
     } else {
-      this._hideInputError(inputElement)
+      this._hideInputError(inputElement);
     }
   };
 
@@ -33,7 +33,7 @@ export class FormValidator {
     this._checkButtonValidation();
     this._inputList.forEach((inputElement) => {
       inputElement.addEventListener('input', () => {
-        this._checkInputValidity(inputElement)
+        this._checkInputValidity(inputElement);
         this._checkButtonValidation();
       })
 
@@ -47,7 +47,7 @@ export class FormValidator {
   };
 
   _checkButtonValidation = () => {
-    if(this._hasInvalidInputs(this._inputList)) {
+    if (this._hasInvalidInputs(this._inputList)) {
       this.toggleButtonStateOn();
     } else {
       this.toggleButtonStateOff();
@@ -66,8 +66,8 @@ export class FormValidator {
   }
 
   enableValidation = () => {
-    this._checkButtonValidation()
-    this._setEventListeners()
+    this._checkButtonValidation();
+    this._setEventListeners();
     this._inputList.forEach((input) => {
       input.addEventListener('input', () => {
         this._checkInputValidity(input);
@@ -78,10 +78,10 @@ export class FormValidator {
 
 
   resetErrors = () => {
-    this._formSelector.reset()
+    this._formSelector.reset();
     this._inputList.forEach((valid) => {
       this._hideInputError(valid);
     });
-    this._checkButtonValidation()
+    this._checkButtonValidation();
   }
 }
