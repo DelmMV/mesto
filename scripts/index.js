@@ -1,6 +1,8 @@
 import {Card} from "./Card.js";
 import {initialCards} from "./initialCards.js";
 import {FormValidator} from "./FormValidator.js";
+import Section from "./Section.js";
+import Popup from "./Popup.js";
 
 const popupCloseBtnAdd = document.querySelector(".popup__btn-close_type_add");
 const popupCloseBtnEdit = document.querySelector(".popup__btn-close_type_edit");
@@ -18,7 +20,7 @@ const popupInputNames = popupTypeAdd.querySelector(".popup__input_type_names");
 const popupInputImage = popupTypeAdd.querySelector(".popup__input_type_image-url");
 const formElementEdit = popupTypeEdit.querySelector(".popup__form_type_edit");
 const formElementAdd = popupTypeAdd.querySelector(".popup__form_type_add");
-const cardsList = document.querySelector(".cards__list");
+const cardsList = ".cards__list"
 export const popupPreviewDescription = popupTypePreview.querySelector(".popup__preview-description");
 export const popupPreviewImage = popupTypePreview.querySelector(".popup__preview-image");
 
@@ -36,19 +38,19 @@ const validationEditCard = new FormValidator(validationArray, formElementEdit)
 validationAddCard.enableValidation();
 validationEditCard.enableValidation();
 
-function renderCard(cardContent, template) {
-  return new Card(cardContent, template);
+
+const generate = (item) => {
+  return new Card(item, '.cards-template').createCard();
 }
 
-initialCards.forEach((item) => {
-  insertCard(item);
-})
+const cardListItem = new Section({
+  item: initialCards,
+  renderer: (item) => {
+    cardListItem.addItem(generate(item));
+  }
+}, cardsList);
 
-function insertCard(item) {
-  const card = renderCard(item, '.cards-template');
-  cardsList.prepend(card.createCard())
-}
-
+cardListItem.insertCard(initialCards);
 
 export function openPopup(popup) {
   document.addEventListener('click', handleMouseClick);
@@ -84,7 +86,7 @@ function handleFormSubmitEdit(evt) {
 
 function handleFormSubmitAdd(evt) {
   evt.preventDefault();
-  insertCard({name: popupInputNames.value, link: popupInputImage.value})
+  this.insertCard({name: popupInputNames.value, link: popupInputImage.value})
   closePopup(popupTypeAdd);
   formElementAdd.reset();
 }
