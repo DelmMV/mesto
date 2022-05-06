@@ -1,0 +1,8 @@
+.cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 49px;
+  margin: 0 auto;
+  max-width: 881px;
+}
