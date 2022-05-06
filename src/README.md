@@ -12,3 +12,4 @@ https://delmmv.github.io/mesto/
 * Nested БЭМ
 * OOP
 * Git
+* Webpack
