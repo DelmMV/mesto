@@ -1,20 +1,20 @@
 export default class UserInfo{
-  constructor(userNameSelector, userSubtitleSelector) {
-    this._userNameSelector = userNameSelector;
-    this._userSubtitleSelector = userSubtitleSelector;
+  constructor(userName, userSubtitle) {
+    this._userName = userName;
+    this._userSubtitle = userSubtitle;
   }
 
   getUserInfo() {
     const _userInfo = {
-      name: this._userNameSelector,
-      subtitle: this._userSubtitleSelector
+      name: this._userName,
+      subtitle: this._userSubtitle
     }
     return _userInfo
   }
 
-  setUserInfo(inputTitle, inputSubtitle) {
-    this._userNameSelector.textContent = inputTitle.value;
-    this._userSubtitleSelector.textContent = inputSubtitle.value;
+  setUserInfo = (profileTitle, profileSubtitle) => {
+    this._userName.textContent = profileTitle;
+    this._userSubtitle.textContent = profileSubtitle;
   }
 
 }

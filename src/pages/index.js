@@ -6,32 +6,28 @@ import Section from "../components/Section.js";
 import PopupWithForm from "../components/PopupWithForm.js";
 import PopupWithImage from "../components/PopupWithImage.js";
 import UserInfo from "../components/UserInfo.js";
-
-
-
-const profile = document.querySelector(".profile");
-const profileEditBtn = profile.querySelector(".profile__btn-edit");
-const profileAddBtn = profile.querySelector(".profile__btn-add");
-const profileTitle = profile.querySelector(".profile__title");
-const profileSubtitle = profile.querySelector(".profile__subtitle");
-const popupTypeAdd = document.querySelector(".popup_type_add");
-const popupTypeEdit = document.querySelector(".popup_type_edit");
-const popupInputName = popupTypeEdit.querySelector(".popup__input_type_name");
-const popupInputDescription = popupTypeEdit.querySelector(".popup__input_type_description");
-const popupInputNames = popupTypeAdd.querySelector(".popup__input_type_names");
-const popupInputImage = popupTypeAdd.querySelector(".popup__input_type_image-url");
-const formElementEdit = popupTypeEdit.querySelector(".popup__form_type_edit");
-const formElementAdd = popupTypeAdd.querySelector(".popup__form_type_add");
-
-const cardsList = ".cards__list"
-const formTypePreviewSelector = ".popup_type_preview";
-const formElementEditSelector = ".popup_type_edit";
-const formElementAddSelector = ".popup_type_add";
+import {
+    profileEditBtn,
+    profileAddBtn,
+    profileTitle,
+    profileSubtitle,
+    popupInputName,
+    popupInputDescription,
+    formElementEdit,
+    formElementAdd,
+    cardsList,
+    formTypePreviewSelector,
+    formElementEditSelector,
+    formElementAddSelector,
+} from "../utils/constants"
 
 
 
 const validationAddCard = new FormValidator(validationArray, formElementAdd)
 const validationEditCard = new FormValidator(validationArray, formElementEdit)
+validationEditCard.enableValidation();
+validationAddCard.enableValidation();
+
 
 const generate = (item) => {
   const cardItem = new Card({
@@ -50,7 +46,7 @@ const cardListItem = new Section({
     cardListItem.addItem(generate(item));
   },
 }, cardsList);
-cardListItem.insertCard(initialCards);
+cardListItem.renderItems(initialCards);
 
 
 const popupWithImage = new PopupWithImage(formTypePreviewSelector)
@@ -65,27 +61,25 @@ popupElementEdit.setEventListeners();
 const userInfo = new UserInfo(profileTitle, profileSubtitle);
 
 function handleEditFormSubmit(data) {
-  userInfo.setUserInfo(popupInputName, popupInputDescription);
+  userInfo.setUserInfo(data.name, data.description);
   popupElementEdit.close();
 }
 
-function handleAddFormSubmit() {
+function handleAddFormSubmit(data) {
   cardListItem.addItem(generate({
-  name: popupInputNames.value,
-  link: popupInputImage.value
+  name: data["names-input"],
+  link: data["image-url"]
   }))
   popupElementAdd.close()
 }
 
 profileAddBtn.addEventListener('click', () => {
   validationAddCard.resetErrors();
-  validationAddCard.enableValidation();
   popupElementAdd.open();
 });
 
 profileEditBtn.addEventListener('click', () => {
   validationEditCard.resetErrors();
-  validationEditCard.enableValidation();
   const userData = userInfo.getUserInfo();
   popupInputName.value = userData.name.textContent;
   popupInputDescription.value = userData.subtitle.textContent;

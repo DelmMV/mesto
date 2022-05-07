@@ -5,6 +5,7 @@ export class Card {
     this._link = data.link;
     this._cardSelector = cardSelector;
     this._handleOpenPreview = handleOpenPreview;
+
   }
 
   _getTemplate() {
@@ -17,6 +18,8 @@ export class Card {
 
   createCard() {
     this._card = this._getTemplate();
+    this._cardLikeBtn = this._card.querySelector('.card__like-btn');
+    this._cardDeleteBtn = this._card.querySelector(".card__delete-btn")
 
     this._cardImage = this._card.querySelector('.card__image')
 
@@ -33,14 +36,14 @@ export class Card {
   }
 
   _handleLikeButton() {
-    this._card.querySelector('.card__like-btn').classList.toggle("card__like-btn_active");
+    this._cardLikeBtn.classList.toggle("card__like-btn_active");
   }
 
   _setActionListeners() {
-    this._card.querySelector(".card__delete-btn").addEventListener("click", () => {
+    this._cardDeleteBtn.addEventListener("click", () => {
       this._removeCards();
     });
-    this._card.querySelector(".card__like-btn").addEventListener("click", () => {
+    this._cardLikeBtn.addEventListener("click", () => {
       this._handleLikeButton()
     });
     this._cardImage.addEventListener("click", () => {
