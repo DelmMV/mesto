@@ -61,7 +61,6 @@ popupElementEdit.setEventListeners();
 const userInfo = new UserInfo(profileTitle, profileSubtitle);
 
 function handleEditFormSubmit(data) {
-  console.log(data)
   userInfo.setUserInfo(data["name"], data["description"]);
   popupElementEdit.close();
 }
