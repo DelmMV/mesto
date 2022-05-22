@@ -1,6 +1,6 @@
 
 export class Card {
-  constructor({data, handleOpenPreview}, cardSelector) {
+  constructor({ data, handleOpenPreview }, cardSelector) {
     this._name = data.name;
     this._link = data.link;
     this._cardSelector = cardSelector;

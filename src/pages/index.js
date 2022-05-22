@@ -19,7 +19,29 @@ import {
     formTypePreviewSelector,
     formElementEditSelector,
     formElementAddSelector,
-} from "../utils/constants.js"
+} from "../utils/constants.js";
+import Api from "../components/Api";
+
+const api = new Api({
+  link: "nomoreparties.co/v1/cohort-41/",
+  name: {
+    authorization: "a3c4c669-5a31-4540-bf35-d0918cf22e48",
+    "content-type": "application/json",
+  }
+});
+
+const cards = api.getInitCards();
+cards
+  .then((data) => {
+    data.reverse().map((card) => {
+      console.log(card)
+    });
+  })
+  .catch((err) => console.log(err));
+
+
+
+
 
 
 
@@ -46,8 +68,8 @@ const cardListItem = new Section({
     cardListItem.addItem(generate(item));
   },
 }, cardsList);
-cardListItem.renderItems(initialCards);
 
+cardListItem.renderItems(initialCards);
 
 const popupWithImage = new PopupWithImage(formTypePreviewSelector)
 popupWithImage.setEventListeners();
