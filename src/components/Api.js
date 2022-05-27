@@ -34,6 +34,11 @@ export default class Api {
       headers: this._headers,
     }).then(this._errorHandler)
   }
+
+  getInitialAll() {
+    return Promise.all([this.getInitialCards(), this.getInitialUser()])
+  }
+
   addCard(name, link) {
     return fetch(`https://mesto.${this._link}cards`, {
       method: "POST",

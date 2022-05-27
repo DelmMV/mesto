@@ -70,7 +70,7 @@ export class Card {
     element.remove();
     element = null;
   }
-  removeCards() {
+  removeCard() {
     this._card.remove();
     this._card = null;
   }

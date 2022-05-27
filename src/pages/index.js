@@ -43,12 +43,12 @@ validationProfileCard.enableValidation();
 
 
 function renderCard(card) {
-  const cardElement = generate(card);
-  cardListItem.addItem(cardElement);
+  const cardElement = generateCard(card);
+  cardListItem.addItem(cardElement);``
 }
 
 
-const generate = (data) => {
+const generateCard = (data) => {
   const cardItem = new Card({
     name: data.name,
     link: data.link,
@@ -89,7 +89,7 @@ const generate = (data) => {
                 api.removeCard(data._id)
           .then(() => {
             popupElementDelete.close()
-          }).then(() => cardItem.removeCards())
+          }).then(() => cardItem.removeCard())
           .catch((err) => {
             console.log(err);
           })
@@ -205,22 +205,16 @@ const api = new Api({
   }
 });
 
-const user = api.getInitialUser();
-user
-  .then((data) => {
-    userId = data._id;
-    userInfo.setUserInfo(data);
-  })
-  .catch((err) => console.log(err));
 
-const cards = api.getInitialCards();
-cards
-  .then((data) => {
-    data.reverse().map((card) => {
+api.getInitialAll()
+  .then(([cardsArray, userData]) => {
+    userId = userData._id;
+    userInfo.setUserInfo(userData)
+    cardsArray.reverse().map((card) => {
       return renderCard(card)
-    });
-  })
-  .catch((err) => console.log(err));
+    })
+  }).catch((err) => console.log(err))
+
 
 
 
