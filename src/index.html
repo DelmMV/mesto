@@ -14,11 +14,9 @@
 <main class="content">
   <!-- Профайл -->
   <section class="profile">
-    <img
-      alt="Фотография Жак-Ив Кусто"
-      class="profile__avatar"
-      src="<%=require('./image/Jacque_Cousteau.jpg')%>"
-    />
+    <button class="profile__avatar-edit">
+    <img class="profile__avatar"/>
+    </button>
     <div class="profile__info">
       <h1 class="profile__title">Жак-Ив Кусто</h1>
       <button class="profile__btn-edit" type="button"></button>
@@ -51,7 +49,7 @@
                placeholder="Ссылка на картинку" required type="url"/>
         <span class="image-url-error popup__input-error"></span>
       </label>
-      <button class="popup__btn-save popup__btn-save_type_add" type="submit">Создать</button>
+      <button class="popup__btn popup__btn-save popup__btn-save_type_add" type="submit">Создать</button>
     </form>
   </div>
 </section>
@@ -68,29 +66,57 @@
       </label>
       <label class="popup__field">
         <input class="popup__input popup__input_type_description" id="who-input" maxlength="200" minlength="2"
-               name="description" placeholder="О себе" required type="text"/>
+               name="about" placeholder="О себе" required type="text"/>
         <span class="who-input-error popup__input-error"></span>
       </label>
-      <button class="popup__btn-save popup__btn-save_type_edit" type="submit">Сохранить </button>
+      <button class="popup__btn popup__btn-save popup__btn-save_type_edit" type="submit">Сохранить </button>
     </form>
   </div>
 </section>
 <!--POPUP PREVIEW-->
 <section class="popup popup_type_preview">
   <div class="popup__preview">
-    <button class="popup__btn-close popup__btn-close_type_preview" type="button"></button>
+    <button class="popup__btn popup__btn-close popup__btn-close_type_preview" type="button"></button>
     <img alt="" class="popup__preview-image"
          src="#">
     <p class="popup__preview-description">описания</p>
   </div>
 </section>
+<!--POPUP PROFILE-->
+<section class="popup popup_type_profile">
+  <div class="popup__container popup__container_type_edit">
+    <button class="popup__btn-close popup__btn-close_type_profile" type="button"></button>
+    <h3 class="popup__title">Обновить аватар</h3>
+    <form class="popup__form popup__form_type_profile" name="popup_form_profile"novalidate>
+      <label class="popup__field">
+        <input class="popup__input popup__input_type_profile" id="profile-input" name="avatar" placeholder="Ссылка на картинку"  required type="url"/>
+        <span class="profile-input-error popup__input-error"></span>
+      </label>
+      <button class="popup__btn popup__btn-save popup__btn-save_type_profile" type="submit">Сохранить </button>
+    </form>
+  </div>
+</section>
+<!--POPUP DELETE-->
+<section class="popup popup_type_delete">
+  <div class="popup__container popup__container_type_delete">
+    <button class="popup__btn-close popup__btn-close_type_delete" type="button"></button>
+    <h3 class="popup__title popup__title_type_delete">Вы уверены?</h3>
+    <form class="popup__form popup__form_type_delete" name="popup_form_delete">
+      <button class="popup__btn popup__btn-save popup__btn_type_delete" type="submit">Да</button>
+    </form>
+  </div>
+</section>
+
 <template class="cards-template">
   <li class="card">
     <img alt="кнопка закрыть" class="card__delete-btn" src="<%=require('./image/trash.svg')%>"/>
     <img class="card__image" src="#" alt="#"/>
     <div class="card__description">
       <h2 class="card__title"></h2>
+      <div class="card__like-box">
       <button class="card__like-btn" type="button"></button>
+      <p class="cards__like-count"></p>
+      </div>
     </div>
   </li>
 </template>
